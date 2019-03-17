@@ -1,7 +1,6 @@
 package com.example.project001;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 

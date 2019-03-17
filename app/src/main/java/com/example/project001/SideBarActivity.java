@@ -200,7 +200,13 @@ public class SideBarActivity extends AppCompatActivity implements NavigationView
             getSupportFragmentManager().beginTransaction().replace(R.id.containerFragment, fragment).commit();
 
         } else if (id == R.id.nav_logout) {
+
+            System.out.println("Logout");
             signOut();
+
+            Intent intent = new Intent(SideBarActivity.this,LoginActivity.class);
+
+            SideBarActivity.this.startActivity(intent);
 
         } else if (id == R.id.nav_home) {
 
@@ -235,29 +241,31 @@ public class SideBarActivity extends AppCompatActivity implements NavigationView
     }
 
 
-    //Convert URL into Bitmap for Profile Picture
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView bmImage;
+        //Convert URL into Bitmap for Profile Picture
+      public   class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+            ImageView bmImage;
 
-        public DownloadImageTask(ImageView bmImage) {
-            this.bmImage = bmImage;
-        }
-
-        protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
-            Bitmap mIcon11 = null;
-            try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
-                mIcon11 = BitmapFactory.decodeStream(in);
-            } catch (Exception e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
+            public DownloadImageTask(ImageView bmImage) {
+                this.bmImage = bmImage;
             }
-            return mIcon11;
+
+            protected Bitmap doInBackground(String... urls) {
+                String urldisplay = urls[0];
+                Bitmap mIcon11 = null;
+                try {
+                    InputStream in = new java.net.URL(urldisplay).openStream();
+                    mIcon11 = BitmapFactory.decodeStream(in);
+                } catch (Exception e) {
+                    Log.e("Error", e.getMessage());
+                    e.printStackTrace();
+                }
+                return mIcon11;
+            }
+
+            protected void onPostExecute(Bitmap result) {
+                bmImage.setImageBitmap(result);
+            }
         }
 
-        protected void onPostExecute(Bitmap result) {
-            bmImage.setImageBitmap(result);
-        }
+
     }
-}
