@@ -28,6 +28,22 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
 
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Travelling From...." />
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:text="Travelling To...." />
+
+
             <TimePicker
                 android:id="@+id/time"
                 android:layout_width="432dp"
@@ -37,21 +53,6 @@
                 android:layout_marginEnd="92dp"
                 android:layout_marginBottom="68dp" />
 
-            <EditText
-                android:id="@+id/departureTXT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Departure"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/destinationTXT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Destination"
-                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/priceTXT"
