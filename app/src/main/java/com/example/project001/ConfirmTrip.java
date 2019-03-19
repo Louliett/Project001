@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.project001.database.DBConnection;
 import com.example.project001.database.Trip;
+import com.google.android.gms.location.places.Places;
 
 import java.util.ArrayList;
 
@@ -42,8 +43,8 @@ public class ConfirmTrip extends AppCompatActivity {
 
                 PlanTrip.departure.setText("");
                 PlanTrip.destination.setText("");
-                PlanTrip.price.setText("");
-                PlanTrip.seats.setText("");
+                PlanTrip.price.setValue(0);
+                PlanTrip.seats.setValue(0);
                 finish();
             }
         });

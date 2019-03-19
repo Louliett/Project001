@@ -22,6 +22,8 @@ public class DBConnection {
     Trip trip;
 
 
+
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     public ArrayList<Trip> trips = new ArrayList<>();
 
@@ -179,4 +181,8 @@ public class DBConnection {
             }
         });
     }
+
+
+
+
 }

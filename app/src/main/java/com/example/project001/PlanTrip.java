@@ -20,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.NumberPicker;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import com.example.project001.database.Trip;
@@ -47,8 +48,10 @@ public class PlanTrip extends Fragment  implements AdapterView.OnItemClickListen
     public static String email;
     public static EditText departure;
     public static EditText destination;
-    public static EditText price;
-    public static EditText seats;
+    public static NumberPicker seats;
+    public static NumberPicker price;
+
+
     Button createButton;
 
 
@@ -85,10 +88,18 @@ public class PlanTrip extends Fragment  implements AdapterView.OnItemClickListen
 
         Log.e("something", "happening");
 
+      seats = getView().findViewById(R.id.seatsTXT);
+      price = getView().findViewById(R.id.priceTXTTXT);
+
+      seats.setMaxValue(10);
+      seats.setMinValue(2);
+
+      price.setMinValue(50);
+      price.setMaxValue(1000);
 
 
-        price = getView().findViewById(R.id.priceTXT);
-        seats = getView().findViewById(R.id.seatsTXT);
+
+
 
         final TimePicker timePicker = getView().findViewById(R.id.time);
         final DatePicker datePicker = getView().findViewById(R.id.date);
@@ -122,8 +133,8 @@ public class PlanTrip extends Fragment  implements AdapterView.OnItemClickListen
                 time,
                 autoCompView.getText().toString(),
                 autoCompView2.getText().toString(),
-                price.getText().toString(),
-                seats.getText().toString(),
+                String.valueOf(price.getValue()),
+                String.valueOf(seats.getValue()),
                 email
         );
 
@@ -135,8 +146,8 @@ public class PlanTrip extends Fragment  implements AdapterView.OnItemClickListen
         if(autoCompView.getText().toString().isEmpty() ||
                 autoCompView2.getText().toString().isEmpty() ||
                 date.isEmpty() ||
-                price.getText().toString().isEmpty() ||
-                seats.getText().toString().isEmpty() ||
+                String.valueOf( price.getValue()).isEmpty() ||
+                String.valueOf(seats.getValue()).isEmpty() ||
                 time.isEmpty()) {
 
             createButton.setClickable(false);
