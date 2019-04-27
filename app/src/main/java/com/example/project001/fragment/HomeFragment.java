@@ -5,13 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -19,10 +16,6 @@ import android.widget.TextView;
 import com.example.project001.PlanTrip;
 import com.example.project001.R;
 import com.example.project001.RidersActivity;
-import com.example.project001.SideBarActivity;
-import com.example.project001.database.DBConnection;
-import com.example.project001.database.Trip;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
 public class
 HomeFragment extends Fragment {
@@ -63,7 +56,7 @@ HomeFragment extends Fragment {
 
         //Tab 1
         TabHost.TabSpec spec = host.newTabSpec("Tab One");
-        spec.setContent(R.id.tab1);
+        spec.setContent(R.id.chats);
         spec.setIndicator("Passenger");
         host.addTab(spec);
 
@@ -73,7 +66,7 @@ HomeFragment extends Fragment {
 
         //Tab 2
         spec = host.newTabSpec("Tab Two");
-        spec.setContent(R.id.tab2);
+        spec.setContent(R.id.users);
         spec.setIndicator("Driver");
         host.addTab(spec);
 
@@ -81,8 +74,8 @@ HomeFragment extends Fragment {
         TextView tv2 = host.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
         tv2.setTextColor(getResources().getColor(R.color.white));
 
-        linearLayout = getView().findViewById(R.id.tab1);
-        triliniarLayout = getView().findViewById(R.id.tab2);
+        linearLayout = getView().findViewById(R.id.chats);
+        triliniarLayout = getView().findViewById(R.id.users);
 
 
         //load map
