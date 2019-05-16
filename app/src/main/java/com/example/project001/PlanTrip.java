@@ -295,8 +295,6 @@ public class PlanTrip extends Fragment implements AdapterView.OnItemClickListene
                         }
                     });
             alertDialog.show();
-            //speech
-            //trying on my branch
 
             createButton.setClickable(false);
 
