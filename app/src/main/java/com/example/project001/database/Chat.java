@@ -10,7 +10,6 @@ public class Chat {
         this.driver = driver;
         this.id = id;
         this.passenger = passenger;
-        
     }
 
     public String getDriver() {

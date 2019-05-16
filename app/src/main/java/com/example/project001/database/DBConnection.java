@@ -63,6 +63,7 @@ public class DBConnection {
                 });
     }
 
+    
     //method for checking if the email exists
     public void checkIfExists(final String email, final String name) {
 
