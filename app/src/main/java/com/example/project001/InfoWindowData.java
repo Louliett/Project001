@@ -7,7 +7,6 @@ public class InfoWindowData {
     private String price;
     private String availableSeats;
     private String author;
-    public String verified="false";
 
     public String getDestination() {
         return destination;
@@ -55,13 +54,5 @@ public class InfoWindowData {
 
     public void setAvailableSeats(String availableSeats) {
         this.availableSeats = availableSeats;
-    }
-
-    public String getVerified() {
-        return verified;
-    }
-
-    public void setVerified(String verified) {
-        this.verified = verified;
     }
 }
